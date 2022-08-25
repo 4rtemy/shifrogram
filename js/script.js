@@ -40,24 +40,16 @@ let alphabet = languages.ru;
 // Функція для вибору мови
 function chooseLanguage(lang) {
 	alphabet = languages[lang.toLowerCase()];
-	return alphabet;
-}
 
-// Слухач подій для отримання події перемикання мови та нового значення
-document.querySelector('select').addEventListener('click', (e) => {
-	document.querySelectorAll('.textFields').forEach( el => el.value = '' );
-
-	chooseLanguage(e.target.value);
-
-	if (alphabet === languages.ru) {
+	if (lang === 'RU') {
 		encryptBtn.innerHTML = 'ЗАШИФРОВАТЬ';
 		decryptBtn.innerHTML = 'ДЕШИФРОВАТЬ';
 		keywordField.placeholder = "Введите ключевое слово";
 		encryptField.placeholder = "Шифр";
 		decryptField.placeholder = "Текст";
-	} else if (alphabet === languages.ua) {
-		encryptBtn.innerHTML = 'ЗАШИФРОВАТЬ';
-		decryptBtn.innerHTML = 'ДЕШИФРОВАТЬ';
+	} else if (lang === 'UA') {
+		encryptBtn.innerHTML = 'ЗАШИФРОВАТИ';
+		decryptBtn.innerHTML = 'ДЕШИФРОВАТИ';
 		keywordField.placeholder = "Введіть ключове слово";
 		encryptField.placeholder = "Шифр";
 		decryptField.placeholder = "Текст";
@@ -69,6 +61,13 @@ document.querySelector('select').addEventListener('click', (e) => {
 		decryptField.placeholder = "Text";
 	}
 
+	return alphabet;
+}
+
+// Слухач подій для отримання події перемикання мови та нового значення
+document.querySelector('select').addEventListener('click', (e) => {
+	document.querySelectorAll('.textFields').forEach( el => el.value = '' );
+	chooseLanguage(e.target.value);
 	return;
 });
 
