@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>ShifroGram</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<select>
+			<option value="RU">RU</option>
+			<option value="UA">UA</option>
+			<option value="EN">EN</option>
+		</select>
+		<div class="content">
+			<div class="headline">
+				<h1>ShifroGram</h1><sup>v1.0 by <a href="https://github.com/4rtemy" target="_blank">Artem Zhuk</a></sup>
+			</div>
+			<div class="modal_windows" id="modal_windows">
+				<div class="copy_success" id="copy_success">
+					<span id="copy_success_text"></span>
+				</div>
+			</div>
+			<div class="row">
+				<input type="text" id="keyword" class="textFields" placeholder="Введите ключевое слово" onclick="copyToBuffer()" name="Ключевое слово">
+			</div>
+			<div class="row row-2">
+				<div class="column">
+					<textarea id="encrypt" class="textFields" placeholder="Шифр" rows="10" onclick="copyToBuffer()"></textarea>
+				</div>
+				<div class="column">
+					<textarea id="decrypt" class="textFields" placeholder="Текст" rows="10" onclick="copyToBuffer()"></textarea>
+				</div>
+			</div>
+			<div class="row row-3">
+				<button class="btn-1" onclick="encryptFunc()">ЗАШИФРОВАТЬ</button>
+				<button class="btn-2" onclick="decryptFunc()">ДЕШИФРОВАТЬ</button>
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<canvas id="Matrix"></canvas>
+	<script src="js/bg.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

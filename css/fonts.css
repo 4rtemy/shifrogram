@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Hacked Cyr';
+	src: url('../fonts/Hacked Cyr.eot');
+	src: local('☺'), url('../fonts/Hacked Cyr.woff') format('woff'), url('../fonts/Hacked Cyr.ttf') format('truetype'), url('../fonts/Hacked Cyr.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
